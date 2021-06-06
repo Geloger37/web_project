@@ -1,151 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href="signin.css" rel="stylesheet">
-    <link href="sticky-footer.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<html lang="ru">
+<head>
+  <title>Мастер по подбору руководителя ВКР</title>
 
-    <meta name="theme-color" content="#000000" />
-    <title>Мастер по подбору руководителя ВКР</title>
-  </head>
-  <body>
-    <div id="header">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="signin.css">
+  <link rel="stylesheet" href="sticky-footer.css">
+</head>
+
+<body>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Мастер по поиску руководителей ВКР</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" id="settings">Настройки</a>
-          <a class="dropdown-item" href="#" id="exit">Выход</a>
-        </div>
-      </li>
-    </ul>
-<!--     <form class="form-inline my-2 my-lg-0"> 
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>-->
-  </div>
-</nav></div>
-    <div id="root">
-    <form class="form-signin" id="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
-      <label for="inputEmail" class="sr-only">Логин</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Логин" required autofocus>
-      <label for="inputPassword" class="sr-only">Пароль</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="enter">Войти</button>
-            
-    </form>
-    
-    <form class="form-signin" id="form-buttons">
-    <button class="btn btn-lg btn-primary btn-block" type="submit" id="repair">Восстановить пароль</button>
-    <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" id="student">Студент</button>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" id="boss">Руководитель</button>
-    </form>
-    
-    <form class="form-signin" id="form-repair">
-      <h1 class="h3 mb-3 font-weight-normal">Восстановление</h1>
-      <label for="inputEmail1" class="sr-only">Электронная почта</label>
-      <input type="email" id="inputEmail1" class="form-control" placeholder="Электронная почта" required autofocus>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="enter">Отправить</button>
-    </form>
-    
-    <form class="form-signin" id="student-form-singup">
-      <h1 class="h3 mb-3 font-weight-normal">Регистрация студента</h1>
-      <label for="surname" class="sr-only">Фамилия</label>
-      <input type="text" id="surname" class="form-control" placeholder="Фамилия" required autofocus>
-      <label for="name" class="sr-only">Имя</label>
-      <input type="text" id="name" class="form-control" placeholder="Имя" required autofocus>
-      <label for="middle_name" class="sr-only">Отчество</label>
-      <input type="text" id="middle_name" class="form-control" placeholder="Отчество" autofocus>
-      <label for="campus" class="sr-only">Ссылка на кампус</label>
-      <input type="url" id="campus" class="form-control" placeholder="Ссылка на кампус" required autofocus>
-      <label for="inputEmail2" class="sr-only">Электронная почта</label>
-      <input type="email" id="inputEmail2" class="form-control" placeholder="Электронная почта" required autofocus>
-      <label for="inputPassword1" class="sr-only">Пароль</label>
-      <input type="password" id="inputPassword1" class="form-control" placeholder="Пароль" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="student_signup">Зарегистриваться</button>
-    </form>
-    
-    <form class="form-signin" id="boss-form-singup">
-      <h1 class="h3 mb-3 font-weight-normal">Регистрация руководителя</h1>
-      <label for="surname1" class="sr-only">Фамилия</label>
-      <input type="text" id="surname1" class="form-control" placeholder="Фамилия" required autofocus>
-      <label for="name1" class="sr-only">Имя</label>
-      <input type="text" id="name1" class="form-control" placeholder="Имя" required autofocus>
-      <label for="middle_name1" class="sr-only">Отчество</label>
-      <input type="text" id="middle_name1" class="form-control" placeholder="Отчество" autofocus>
-      <label for="inputEmail3" class="sr-only">Электронная почта</label>
-      <input type="email" id="inputEmail3" class="form-control" placeholder="Электронная почта" required autofocus>
-      <label for="places" class="sr-only">Количество свободных мест</label>
-      <input type="number" id="places" class="form-control" placeholder="Количество свободных мест" required autofocus>
-      <label for="inputPassword2" class="sr-only">Пароль</label>
-      <input type="password" id="inputPassword2" class="form-control" placeholder="Пароль" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="boss_signup">Зарегистриваться</button>
-      
-    </form>
-    
-    <form class="form-signin" id="boss-form-singup">
-      <h1 class="h3 mb-3 font-weight-normal">Поиск руководителя</h1>
-      <input type="text" id="surname1" class="form-control" placeholder="Введите тег" autofocus>
-      <table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
-    </table>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="boss_signup">Найти</button>
-      
-    </form>
-    
-    </div>
-    
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">@ИРНИТУ2021</span>
+      <a class="navbar-brand" href="#">Мастер по поиску руководителей ВКР</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- ToDo: Меню совсем сырое -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#" id="settings">Настройки</a>
+              <a class="dropdown-item" href="#" id="exit">Выход</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </footer>
-    <script src="index.js"></script>
-    
-  </body>
+    </nav>
+  </header>
+
+  <div id="root">
+    <!-- forms -->
+
+    <!-- ToDo: добавить кнопку возврата -->
+  </div>
+  
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">@ИРНИТУ2021</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="index.js"></script>
+</body>
 </html>
