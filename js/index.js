@@ -62,25 +62,19 @@ const formBossSingup =
 
 
 $(document).ready(() => {
-  document.getElementById("root").innerHTML = formSignIn + formButtons;
-})
+  $("#root").html(formSignIn + formButtons);
+  $('#repair').click(() => {
+    $("#root").html(formRepair);
+  })
 
-$(document).on('click', '#repair', function () {
-  document.getElementById("root").innerHTML = formRepair;
-})
+  $('#student').click(() => {
+    document.getElementById("root").innerHTML = formStudentSingup;
+  })
 
-$(document).on('click', '#student', function () {
-  document.getElementById("root").innerHTML = formStudentSingup;
-})
+  $('#boss').click(() => {
+    document.getElementById("root").innerHTML = formBossSingup;
+  })
 
-$(document).on('click', '#boss', function () {
-  document.getElementById("root").innerHTML = formBossSingup;
-})
-
-
-// ToDo: доделать настройки
-$("#settings").click(() => {
-    
 })
 
 $("#enter").click(() => {
