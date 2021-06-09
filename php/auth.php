@@ -1,4 +1,5 @@
 <?php
+// php
     // ToDo: запустить базу на локальном
     const HOST = 'localhost';
     const USER = 'root';
