@@ -30,3 +30,7 @@ $(document).ready(() => {
   document.getElementById('header').innerHTML = headerNav;
   document.getElementById('footer').innerHTML = footer;
 })
+
+function checkCookies(){
+  
+}
