@@ -2,10 +2,17 @@
 
     $login = $_POST['login'];
     $password = $_POST['password'];
+
+    $ps = password_hash($password, PASSWORD_DEFAULT);
+
+    const HOST = 'localhost';
+    const USER = 'root';
+    const PASSWORD = 'root';
+    const DATABASE = 'poisk_rukovoditelia';
+
+    $mysql = new mysqli(HOST, USER, PASSWORD, DATABASE);
     
-    $mysql = new mysqli('localhost', 'root', 'root', 'poisk_rukovoditelia');
-    
-    $result = $mysql->query("INSERT INTO Users VALUES($login, $password);");
+    $result = $mysql->query("INSERT INTO Users VALUES($login, $ps);");
     
     echo json_encode($result);
 

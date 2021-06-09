@@ -1,6 +1,6 @@
 const headerNav = 
   `<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">Мастер по поиску руководителей ВКР</a>
+    <a class="navbar-brand" id="logo">Мастер по поиску руководителей ВКР</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,10 +9,10 @@ const headerNav =
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Фамилия Имя Отчество
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" id="settings">Настройки</a>
+            <a class="dropdown-item" href="/settings.html" id="settings">Настройки</a>
             <a class="dropdown-item" id="exit">Выход</a>
           </div>
         </li>
@@ -44,13 +44,9 @@ const formBossSettings =
   </form>`;
 
 $(document).ready(() => {
-  document.getElementById('header').innerHTML = headerNav;
-  document.getElementById('footer').innerHTML = footer;
+  $('#header').html(headerNav);
+  $('#footer').html(footer);
 
-  // ToDo: доделать настройки
-  $("#settings").click(() => {
-    
-  })
 })
 
 function checkCookies(){

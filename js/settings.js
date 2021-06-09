@@ -1,5 +1,5 @@
 const formSettings = 
- `<form class="form-signin" id="boss-form-singup">
+ `<form class="form-signin" id="boss-form-settings">
     <h1 class="h3 mb-3 font-weight-normal">Настройка профиля</h1>
 
     <label for="email" class="sr-only">Электронная почта</label>
@@ -18,7 +18,7 @@ const formSettings =
   </form>`;
 
 $(document).ready(() => {
-  document.getElementById("root").innerHTML = formSettings;
+  $("#root").html(formSettings);
 })
 
 $("#changeSettings").click(() => {

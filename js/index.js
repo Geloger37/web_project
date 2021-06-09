@@ -1,3 +1,5 @@
+import checkCookies from general
+
 const formButtons = 
  `<form class="form-signin" id="form-buttons">
     <button class="btn btn-lg btn-primary btn-block" type="button" id="repair">Восстановить пароль</button>
@@ -66,13 +68,17 @@ $(document).ready(() => {
   $('#repair').click(() => {
     $("#root").html(formRepair);
   })
-
+  
   $('#student').click(() => {
     document.getElementById("root").innerHTML = formStudentSingup;
   })
 
   $('#boss').click(() => {
     document.getElementById("root").innerHTML = formBossSingup;
+  })
+  
+  $('#logo').click(() => { 
+    // ToDo: Подумать как проверять авторизацию
   })
 
 })

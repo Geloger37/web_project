@@ -3,7 +3,8 @@
     const HOST = 'localhost';
     const USER = 'root';
     const PASSWORD = 'root';
-    const DATABASE = 'Users';
+    const DATABASE = 'poisk_rukovoditelia';
+    const TABLE = 'Users';
 
 
     $mysql = new mysqli(HOST, USER, PASSWORD, DATABASE);
@@ -14,7 +15,9 @@
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $query = 'SELECT * FROM ' . DATABASE . ' WHERE login = '. $login . ' AND password = ' . $password; 
+    $ps = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = 'SELECT * FROM ' . Users . ' WHERE login = '. $login . ' AND pasword = ' . $ps; 
     $result = $mysql->query($query);
     $user = $result->fetch_assoc();
     
