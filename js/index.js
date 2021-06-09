@@ -1,5 +1,3 @@
-import checkCookies from general
-
 const formButtons = 
  `<form class="form-signin" id="form-buttons">
     <button class="btn btn-lg btn-primary btn-block" type="button" id="repair">Восстановить пароль</button>
@@ -70,11 +68,11 @@ $(document).ready(() => {
   })
   
   $('#student').click(() => {
-    document.getElementById("root").innerHTML = formStudentSingup;
+    $("#root").html(formStudentSingup);
   })
 
   $('#boss').click(() => {
-    document.getElementById("root").innerHTML = formBossSingup;
+    $("#root").html(formBossSingup);
   })
   
   $('#logo').click(() => { 
