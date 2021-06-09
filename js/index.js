@@ -5,7 +5,7 @@ const formButtons =
     <button class="btn btn-lg btn-primary btn-block" type="button" id="student">Студент</button>
     <button class="btn btn-lg btn-primary btn-block" type="button" id="boss">Руководитель</button>
   </form>`;
-
+// Добрый вечер!
 const formSignIn =
  `<form class="form-signin" id="form-signin">
     <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
