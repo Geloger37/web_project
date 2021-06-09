@@ -8,11 +8,7 @@ const formSettings =
     <label for="placesNumber" class="sr-only">Количество свободных мест</label>
     <input type="number" id="placesNumber" class="form-control" placeholder="Имя" required autofocus>
 
-    <label for="messageForStudents" class="sr-only">Сообщение студентам</label>
-    <input type="text" id="messageForStudents" class="form-control" placeholder="Сообщение студентам" autofocus>
-
-    <label for="students" class="sr-only">Электронная почта</label>
-    <input type="email" id="students" class="form-control" placeholder="Электронная почта" required autofocus>
+    <label for="students" class="nav-link dropdown-toggle">Студенты</label>
     
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="changeSettings">Сохранить изменения</button>
   </form>`;
