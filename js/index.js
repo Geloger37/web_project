@@ -90,12 +90,7 @@ $("#enter").click(() => {
           pass : $.trim($("input[type='password']").val())
         },
         (data, status) => {
-          if(data != 0) {
-            $("#form-signin").hide()
-            $("#form-repair").hide()
-            $("#student-form-singup").hide()
-            $("#boss-form-singup").hide()
-          }
+          
         }
   )
 })
@@ -108,15 +103,10 @@ $("#student_signup").click(() => {
                 pass : $.trim($("input[type='password']").val())
            },
            (data, status) => {
-               $("#form-signin").show()
+               
            }
     )
-    $("#navbarDropdown").hide()
-    $("#form-repair").hide()
-    $("#form-signin").hide()
-    $("#form-buttons").hide()
-    $("#boss-form-singup").hide()
-    $("#student-form-singup").show()
+    
 })
 
 
@@ -127,13 +117,8 @@ $("#boss_signup").click(() => {
                 pass : $.trim($("input[type='password']").val())
            },
            (data, status) => {
-               $("#form-signin").show()
+               
            }
     )
-    $("#navbarDropdown").hide()
-    $("#form-repair").hide()
-    $("#form-signin").hide()
-    $("#form-buttons").hide()
-    $("#boss-form-singup").hide()
-    $("#student-form-singup").show()
+    
 })
