@@ -23,4 +23,5 @@ const tableSearch =
 
   $(document).ready(() => {
     $("#root").html(tableSearch);
+    $('#table-search').DataTable();
   })

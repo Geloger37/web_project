@@ -31,17 +31,13 @@ if($users !== null) {
     if($cnt_ids !== null) {
         $id = max($id, count($cnt_ids) + 1);
     }
-
-    
-
-    $query = 'INSERT INTO Users values() =' . '\'' . $login . '\'';
+    $query = "INSERT INTO Users values({$id}, '{$login}', '{$ps}')";
+    $res = $mysql->query($query);
+    echo json_encode(array('message' => 'Пользователь успешно зарестрирован.', 'success' => 1));
 }
-/*
-setcookie($login, time() - 3600);
+
 
 $mysql->close();
 
-echo password_verify($password, $pwd['pasword']);
-*/
 
 ?>
