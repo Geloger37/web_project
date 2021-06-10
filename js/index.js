@@ -66,6 +66,29 @@ $(document).ready(() => {
   $("#root").html(formSignIn + formButtons);
   $('#navbarDropdown').hide();
   
+  $('#form-signin').submit(function (e) { 
+    e.preventDefault();
+    
+    var ok = 1;
+
+    $.ajax({
+      async: false,
+      type: "POST",
+      url: "php/auth.php",
+      data: {
+        login: $('#inputEmail').val().trim(),
+        pass:  $('#inputPassword').val().trim()
+      },
+    })
+    .done((message) => {
+      if(message == 0) {
+        alert('Неправильный логин или пароль!');
+      } else {
+        window.location.href = "/search.html";
+      }
+    });
+  });
+
   $('#repair').click(() => {
     $("#root").html(formRepair);
   })
@@ -77,29 +100,49 @@ $(document).ready(() => {
   $('#boss').click(() => {
     $("#root").html(formBossSingup);
   })
-  
-  $('#logo').click(() => { 
-    
-  })
  
-  $('#enter').click(() => {
-    $.post("php/auth.php",
-        {
-          login : $.trim($("input[id='inputEmail']").val()),
-          pass : $.trim($("input[type='password']").val())
-        },
-        (data, status) => {
-          console.log(data)
-        }
-    )
-    $("#root").html(tableSearch);
-    $("#table-search").DataTable();
-  })
+  /*$('#enter').click( () => {
+
+    
+
+    var ok = 1;
+
+    $.ajax({
+      async: false,
+      type: "POST",
+      url: "php/auth.php",
+      data: {
+        login: 'admin',
+        pass: 'admin'
+      },
+    })
+    .done((message) => {
+      if(message == 0) {
+        alert('Неправильный логин или пароль!');
+      } else {
+        window.location.href = "/search.html";
+      }
+    });
+    
+    
+    function change() {
+      ok = 0;
+    }
+
+    if( ok ) {
+      
+      $(location).attr('href', '');
+    }
+    else {
+      alert('Неверный логин или пароль!');
+    }
+    
+  } )*/
 
 })
 
 
-// ToDo: доделать авторизацию
+// ToDo: доделать регистрацию
 $("#student_signup").click(() => {
     $.post("php/signup_user.php",
            {

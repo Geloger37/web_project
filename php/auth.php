@@ -16,18 +16,15 @@
 
     $ps = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "SELECT * FROM Users";
+    $query = 'SELECT pasword FROM Users WHERE login =' . '\'' . $login . '\'';
+    
 
     $result = $mysql->query($query);
-    $user = $result->fetch_assoc();
+    $pwd = $result->fetch_assoc();
     
-    if( $user !== null ){
-        echo TRUE;
-        // ToDo: если найден пользователь
-    } else{
-        echo FALSE;
-        // ToDo: информация о том, что пользователь не найден
-    }
+    setcookie($login, time() - 3600);
 
     $mysql->close();
+    
+    echo password_verify($password, $pwd['pasword']);
 ?>
