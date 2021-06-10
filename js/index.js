@@ -102,26 +102,25 @@ $(document).ready(() => {
   })
  
   $('#enter').click(() => {
-    $("#root").html(tableSearch);
-  })
-
-})
-
-$("#enter").click(() => {
-  $.post("auth.php",
+    $.post("php/auth.php",
         {
           login : $.trim($("input[id='inputEmail']").val()),
           pass : $.trim($("input[type='password']").val())
         },
         (data, status) => {
-          
+          console.log(data)
         }
   )
+    $("#root").html(tableSearch);
+    $("#table-search").DataTable();
+  })
+
 })
+
 
 // ToDo: доделать авторизацию
 $("#student_signup").click(() => {
-    $.post("signup_user.php",
+    $.post("php/signup_user.php",
            {
                login : $.trim($("input[id='inputEmail']").val()),
                 pass : $.trim($("input[type='password']").val())

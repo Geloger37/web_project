@@ -4,7 +4,6 @@
     const USER = 'root';
     const PASSWORD = 'root';
     const DATABASE = 'poisk_rukovoditelia';
-    const TABLE = 'Users';
 
 
     $mysql = new mysqli(HOST, USER, PASSWORD, DATABASE);
@@ -17,13 +16,16 @@
 
     $ps = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = 'SELECT * FROM ' . Users . ' WHERE login = '. $login . ' AND pasword = ' . $ps; 
+    $query = "SELECT * FROM Users";
+
     $result = $mysql->query($query);
     $user = $result->fetch_assoc();
     
-    if(count($user) == 1){
+    if( $user !== null ){
+        echo FALSE;
         // ToDo: если найден пользователь
     } else{
+        echo TRUE;
         // ToDo: информация о том, что пользователь не найден
     }
 

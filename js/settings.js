@@ -8,7 +8,10 @@ const formSettings =
     <label for="placesNumber" class="sr-only">Количество свободных мест</label>
     <input type="number" id="placesNumber" class="form-control" placeholder="Количество свободных мест" required autofocus>
 
-    <label for="students" class="nav-link dropdown-toggle">Студенты</label>
+    <a class="nav-link dropdown-toggle" id="studentsDropdown" role="button" data-toggle="dropdown">Студенты</a>
+    <div class="dropdown-menu" aria-labelledby="studentsDropdown">
+      <a class="dropdown-item" id="settings">Настройки</a>
+    </div>
     
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="changeSettings">Сохранить изменения</button>
   </form>`;
