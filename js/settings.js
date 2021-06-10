@@ -3,10 +3,10 @@ const formSettings =
     <h1 class="h3 mb-3 font-weight-normal">Настройка профиля</h1>
 
     <label for="email" class="sr-only">Электронная почта</label>
-    <input type="email" id="email" class="form-control" placeholder="e-mail" required autofocus>
+    <input type="email" id="email" class="form-control" placeholder="Электронная почта" required autofocus>
 
     <label for="placesNumber" class="sr-only">Количество свободных мест</label>
-    <input type="number" id="placesNumber" class="form-control" placeholder="Имя" required autofocus>
+    <input type="number" id="placesNumber" class="form-control" placeholder="Количество свободных мест" required autofocus>
 
     <label for="students" class="nav-link dropdown-toggle">Студенты</label>
     
