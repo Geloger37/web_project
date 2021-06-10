@@ -105,7 +105,7 @@ $(document).ready(() => {
   
     $.ajax({
       async: false,
-      type: "POST",
+      type: "GET",
       url: "php/signup_user.php",
       data: {
         login: $('#inputEmail2').val().trim(),
