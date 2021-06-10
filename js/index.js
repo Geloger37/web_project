@@ -60,31 +60,12 @@ const formBossSingup =
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="boss_signup">Зарегистриваться</button>
   </form>`;
 
- const tableSearch = 
- `<form class="form-signin" id="boss-table">
-    <h1 class="h3 mb-3 font-weight-normal">Список руководителей</h1>
-    <table id="table-search" class="display" cellspacing="0" width="100%">
-      <thead>
-            <tr>
-                <th>Название темы</th>
-                <th>Студент</th>
-                <th>Год</th>
-                <th>Специальность</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Название темы</th>
-                <th>Студент</th>
-                <th>Год</th>
-                <th>Специальность</th>
-            </tr>
-        </tbody>
-    </table>
-  </form>`
+ 
 
 $(document).ready(() => {
   $("#root").html(formSignIn + formButtons);
+  $('#navbarDropdown').hide();
+  
   $('#repair').click(() => {
     $("#root").html(formRepair);
   })
@@ -98,7 +79,7 @@ $(document).ready(() => {
   })
   
   $('#logo').click(() => { 
-    // ToDo: Подумать как проверять авторизацию
+    
   })
  
   $('#enter').click(() => {
@@ -110,7 +91,7 @@ $(document).ready(() => {
         (data, status) => {
           console.log(data)
         }
-  )
+    )
     $("#root").html(tableSearch);
     $("#table-search").DataTable();
   })

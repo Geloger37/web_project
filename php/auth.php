@@ -7,12 +7,12 @@
 
 
     $mysql = new mysqli(HOST, USER, PASSWORD, DATABASE);
-    if($mysqli->connect_errno){
+    if($mysql->connect_errno){
         // ToDO: Вывод ошибки, что не получается подключиться к БД
     }
 
     $login = $_POST['login'];
-    $password = $_POST['password'];
+    $password = $_POST['pass'];
 
     $ps = password_hash($password, PASSWORD_DEFAULT);
 
@@ -22,10 +22,10 @@
     $user = $result->fetch_assoc();
     
     if( $user !== null ){
-        echo FALSE;
+        echo TRUE;
         // ToDo: если найден пользователь
     } else{
-        echo TRUE;
+        echo FALSE;
         // ToDo: информация о том, что пользователь не найден
     }
 
