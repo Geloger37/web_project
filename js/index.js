@@ -64,7 +64,7 @@ const formBossSingup =
 
 $(document).ready(() => {
   $("#root").html(formSignIn + formButtons);
-  //$("#root").html(formStudentSingup);
+  // $("#root").html(formStudentSingup);
   
   $('#navbarDropdown').hide();
   

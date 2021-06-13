@@ -5,14 +5,13 @@ const USER = 'root';
 const PASSWORD = 'root';
 const DATABASE = 'poisk_rukovoditelia';
 
-
 $mysql = new mysqli(HOST, USER, PASSWORD, DATABASE);
 if($mysql->connect_errno){
     // ToDO: Вывод ошибки, что не получается подключиться к БД
 }
 
-$login = $_GET['login'];
-$password = $_GET['pass'];
+$login = $_POST['login'];
+$password = $_POST['pass'];
 
 $ps = password_hash($password, PASSWORD_DEFAULT);
 
@@ -34,7 +33,7 @@ if($users !== null) {
     $query = "INSERT INTO Users values({$id}, '{$login}', '{$ps}')";
 
     $res = $mysql->query($query);
-    echo json_encode(array('message' => 'Пользователь успешно зарестрирован.', 'success' => 1));
+    echo json_encode(array('message' => 'Пользователь успешно зарестрирован.', 'success' => 1, 'id' => $id));
 }
 
 
