@@ -24,14 +24,15 @@ $users = $result->fetch_assoc();
 if($users !== null) {
     echo json_encode(array('message' => 'Пользователь с такой электронной почтой уже существует.', 'success' => 0));
 } else {
-    $ids = 'SELECT * FROM Users';
+    $ids = 'SELECT max(id) as id FROM Users';
     $res_ids = $mysql->query($ids);
     $cnt_ids = $res_ids->fetch_assoc();
     $id = 1;
     if($cnt_ids !== null) {
-        $id = max($id, count($cnt_ids) + 1);
+        $id = $cnt_ids['id'] + 1;
     }
     $query = "INSERT INTO Users values({$id}, '{$login}', '{$ps}')";
+
     $res = $mysql->query($query);
     echo json_encode(array('message' => 'Пользователь успешно зарестрирован.', 'success' => 1));
 }

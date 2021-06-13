@@ -64,6 +64,8 @@ const formBossSingup =
 
 $(document).ready(() => {
   $("#root").html(formSignIn + formButtons);
+  //$("#root").html(formStudentSingup);
+  
   $('#navbarDropdown').hide();
   
   $('#form-signin').submit(function (e) { 
@@ -99,6 +101,8 @@ $(document).ready(() => {
     $("#root").html(formBossSingup);
   })
  
+  
+
   // ToDo: доделать регистрацию
   $('#student-form-singup').submit(function (e) { 
     e.preventDefault();
@@ -113,8 +117,9 @@ $(document).ready(() => {
       },
     })
     .done((message) => {
-      
+      //window.location.href = "/search.html";    
     });
+    
     
     /*$.ajax({
       type: "POST",
@@ -128,7 +133,7 @@ $(document).ready(() => {
       
     });*/
 
-    window.location.href = "/search.html";     
+     
   })
 
   $("#boss_signup").click(() => {

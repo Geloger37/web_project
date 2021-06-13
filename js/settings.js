@@ -9,15 +9,34 @@ const formSettings =
     <input type="number" id="placesNumber" class="form-control" placeholder="Количество свободных мест" required autofocus>
 
     <a class="nav-link dropdown-toggle" id="studentsDropdown" role="button" data-toggle="dropdown">Студенты</a>
-    <div class="dropdown-menu" aria-labelledby="studentsDropdown">
-      <a class="dropdown-item" id="settings">Настройки</a>
-    </div>
+    <form class="form-signin" id="boss-table">
+    
+    <table id="table-students"  cellspacing="0" width="100%">
+      <thead>
+            <tr>
+                <th>Студент</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Иванов И.И.</th>
+            </tr>
+            <tr>
+                <th>Петров П.П.</th>
+                
+            </tr>
+
+        </tbody>
+    </table>
+  </form>
     
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="changeSettings">Сохранить изменения</button>
   </form>`;
 
 $(document).ready(() => {
   $("#root").html(formSettings);
+  $('#table-students').DataTable();
 })
 
 $("#changeSettings").click(() => {

@@ -8,6 +8,7 @@ const tableSearch =
                 <th>Студент</th>
                 <th>Год</th>
                 <th>Специальность</th>
+                <th>Рейтинг</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +17,16 @@ const tableSearch =
                 <th>Студент</th>
                 <th>Год</th>
                 <th>Специальность</th>
+                <th>Рейтинг</th>
             </tr>
+            <tr>
+                <th>Название темы</th>
+                <th>Студент</th>
+                <th>Год</th>
+                <th>Специальность</th>
+                <th>Рейтинг</th>
+            </tr>
+
         </tbody>
     </table>
   </form>`
