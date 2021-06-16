@@ -1,5 +1,3 @@
-
-
 const formStudentSingup = 
  `<form class="form-signin" id="student-form-singup">
     <h1 class="h3 mb-3 font-weight-normal">Регистрация студента</h1>
@@ -18,32 +16,40 @@ const formStudentSingup =
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="student_signup">Зарегистриваться</button>
   </form>`;
 
-
- 
-
 $(document).ready(() => {
-
-  
-
 
   $("#root").html(formStudentSingup);
   
   $('#navbarDropdown').hide();
   
-  
   $('#student-form-singup').submit(function (e) { 
     e.preventDefault();
   
     $.ajax({
-      async: false,
       type: "POST",
       url: "php/signup_user.php",
       data: {
         login: $('#inputEmail2').val().trim(),
-        pass: $('#inputPassword1').val().trim() 
+        pass: $('#inputPassword1').val().trim()
       },
     })
-    .done((message) => {   
+    .done((message) => { 
+      $.ajax({
+        type: "POST",
+        url: "php/student_signup.php",
+        data: {
+          surname: $('#surname').val().trim(),
+          name: $('#name').val().trim(),
+          middle_name: $('#middle_name').val().trim(),
+          campus: $('#campus').val().trim(),
+          login: $('#inputEmail2').val().trim(),
+          pass: $('#inputPassword1').val().trim() 
+        },
+        
+      })
+      .done((message) => {
+
+      });
     });
   
   
