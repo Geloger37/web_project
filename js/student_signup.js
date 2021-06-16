@@ -35,7 +35,7 @@ $(document).ready(() => {
     })
     .done((message) => { 
       $.ajax({
-        type: "POST",
+        type: "GET",
         url: "php/student_signup.php",
         data: {
           surname: $('#surname').val().trim(),
@@ -43,7 +43,6 @@ $(document).ready(() => {
           middle_name: $('#middle_name').val().trim(),
           campus: $('#campus').val().trim(),
           login: $('#inputEmail2').val().trim(),
-          pass: $('#inputPassword1').val().trim() 
         },
         
       })
