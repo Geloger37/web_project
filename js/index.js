@@ -63,6 +63,12 @@ const formBossSingup =
  
 
 $(document).ready(() => {
+
+  
+
+// ToDo: доделать регистрацию
+
+
   $("#root").html(formSignIn + formButtons);
   // $("#root").html(formStudentSingup);
   
@@ -101,40 +107,22 @@ $(document).ready(() => {
     $("#root").html(formBossSingup);
   })
  
-  
-
-  // ToDo: доделать регистрацию
-  $('#student-form-singup').submit(function (e) { 
+  $('#student_signup').on('click', function (e) { 
     e.preventDefault();
   
     $.ajax({
       async: false,
-      type: "GET",
+      type: "POST",
       url: "php/signup_user.php",
       data: {
         login: $('#inputEmail2').val().trim(),
-        pass:  $('#inputPassword1').val().trim()
+        pass: $('#inputPassword1').val().trim() 
       },
     })
-    .done((message) => {
-      //window.location.href = "/search.html";    
+    .done((message) => {   
     });
-    
-    
-    /*$.ajax({
-      type: "POST",
-      url: "php/student_signup.php",
-      data: {
-        login: $('#inputEmail2').val().trim(),
-        pass:  $('#inputPassword1').val().trim()
-      },
-    })
-    .done((message) => {
-      
-    });*/
-
-     
-  })
+  
+  
 
   $("#boss_signup").click(() => {
     $.post("boss_signup.php",
@@ -152,7 +140,8 @@ $(document).ready(() => {
 })
 
 
+  
+  
 
-
-
-
+   
+});
